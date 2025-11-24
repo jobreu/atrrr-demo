@@ -11,8 +11,11 @@ library(atrrr)
 # Authentication ####
 auth("you_user_name") # insert your user name here (e.g., tmueller.bsky.social)
 
+# Note: You (will) need to login to your Bluesky account and create an "app password"
+# You then need to paste the app password into the popup window that appears after running the auth() function
+
 # Import account list ####
-accounts <- read_csv2("insert/path/to/accounts.csv") # insert path to your accounts.csv file here
+accounts <- read_csv2("./data/candidates_btw25_bluesky.csv") # you may have to adjust the path here
 glimpse(accounts)
 
 # Collect data ####
@@ -37,7 +40,7 @@ followers <- get_followers(actor = "goering-eckardt.de",
 
 glimpse(followers)
 
-## following ####
+### Following ####
 following <- get_follows(actor = "goering-eckardt.de",
               limit = 100)
 
